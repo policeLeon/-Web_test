@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pojo.c_course">
+<select id="findById2" parameterType="int" resultType="pojo.c_course">
+    select * from c_course where id = #{id}
+</select>
+<select id="findAllBySid" parameterType="int" resultType="pojo.c_course">
+    select * from c_course where sid = #{sid}
+</select>
+<select id="findAll" resultType="pojo.c_course">
+    select * from c_course
+</select>
+<update id="updateById" parameterType="pojo.c_course" flushCache="true" statementType="PREPARED" timeout="20">
+    update c_course set name = #{name} , hours = #{hours} , sid = #{sid}  where id = #{id}
+</update>
+<!--<update id="update" parameterType="pojo.c_course" flushCache="true" statementType="PREPARED" timeout="20">-->
+<!--    update course set name = #{name} , hours = #{hours} , sid = #{sid}-->
+<!--</update>-->
+<insert id="insert" keyProperty="id" useGeneratedKeys="true" parameterType="pojo.c_course"  >
+    insert into c_course(name,hours,sid) values(#{name},#{hours},#{sid})
+</insert>
+<delete id="deleteByS_name" parameterType="String" >
+    delete from c_course where name = #{name}
+</delete>
+</mapper>
