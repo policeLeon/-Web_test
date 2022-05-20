@@ -1,5 +1,3 @@
-import com.sun.org.apache.xml.internal.security.utils.resolver.ResourceResolver;
-import com.sun.org.apache.xml.internal.security.utils.resolver.ResourceResolverSpi;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -59,9 +57,9 @@ public class CourseTest {
             System.out.println(course.toString());
         }
         c_course course = new c_course();
-        course.setHours(32);
-        course.setName("大数据存储");
-        course.setSid(1);
+        course.setHours(100);
+        course.setName("计算机网络");
+        course.setSid(2);
         session.insert("insert",course);
         session.commit();
 //        System.out.println(course.toString());

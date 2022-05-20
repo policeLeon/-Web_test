@@ -23,4 +23,7 @@
 <delete id="deleteByS_name" parameterType="String" >
     delete from c_course where name = #{name}
 </delete>
+<delete id="deleteById" parameterType="int">
+    delete from c_course where id = #{id}
+</delete>
 </mapper>
